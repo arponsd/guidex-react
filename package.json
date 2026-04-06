@@ -1,6 +1,6 @@
 {
   "name": "guidex-react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Lightweight, zero-dependency onboarding tour component for React. Spotlight overlay, smart positioning, keyboard navigation, and customizable steps.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
