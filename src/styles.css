@@ -1,0 +1,177 @@
+/* guidex-react v1.0.0 */
+
+.rot-spotlight {
+  position: fixed;
+  z-index: 99998;
+  border-radius: 12px;
+  border: 2px solid rgba(99, 102, 241, 0.5);
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.rot-tooltip {
+  position: fixed;
+  z-index: 99999;
+  max-width: 360px;
+  width: 90vw;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+  animation: rot-fade-in 0.25s ease-out;
+
+  /* Light mode defaults */
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  color: #1a1a1a;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .rot-tooltip {
+    background: rgba(28, 28, 36, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    color: #e5e5e5;
+  }
+}
+
+/* Explicit dark class support (next-themes, etc.) */
+.dark .rot-tooltip,
+[data-theme="dark"] .rot-tooltip {
+  background: rgba(28, 28, 36, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  color: #e5e5e5;
+}
+
+@keyframes rot-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rot-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #999;
+  transition: color 0.15s;
+  line-height: 1;
+  font-size: 18px;
+}
+
+.rot-close:hover {
+  color: #333;
+}
+
+.dark .rot-close:hover,
+[data-theme="dark"] .rot-close:hover {
+  color: #eee;
+}
+
+.rot-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  padding-right: 24px;
+  line-height: 1.3;
+}
+
+.rot-content {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  opacity: 0.8;
+}
+
+.rot-progress-track {
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 16px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.dark .rot-progress-track,
+[data-theme="dark"] .rot-progress-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.rot-progress-bar {
+  height: 100%;
+  border-radius: 3px;
+  background: #6366f1;
+  transition: width 0.3s ease;
+}
+
+.rot-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rot-step-count {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.rot-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.rot-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+
+.rot-btn-next {
+  background: #6366f1;
+  color: #fff;
+}
+
+.rot-btn-next:hover {
+  background: #5558e6;
+}
+
+.rot-btn-prev {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: inherit;
+}
+
+.rot-btn-prev:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.dark .rot-btn-prev,
+[data-theme="dark"] .rot-btn-prev {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .rot-btn-prev:hover,
+[data-theme="dark"] .rot-btn-prev:hover {
+  background: rgba(255, 255, 255, 0.06);
+}

@@ -1,0 +1,54 @@
+{
+  "name": "guidex-react",
+  "version": "1.0.0",
+  "description": "Lightweight, zero-dependency onboarding tour component for React. Spotlight overlay, smart positioning, keyboard navigation, and customizable steps.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --external react --external react-dom",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "onboarding",
+    "tour",
+    "walkthrough",
+    "guide",
+    "spotlight",
+    "tooltip",
+    "product-tour",
+    "user-onboarding",
+    "intro"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
